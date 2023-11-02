@@ -1,0 +1,104 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
+
+
+html{
+    font-size: 62.5.%;
+  } 
+html,
+body {
+    padding: 1rem;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    
+  }
+* {
+    box-sizing: border-box;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center
+}
+
+.title{
+    font-size: 36pt;
+    font: Roboto;
+    color:darkblue
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 30%;
+    margin-bottom: 15pt;
+}
+.inputField{
+    margin-bottom:5px ;
+    padding: 15px 20px;
+    font-size: 14pt;
+    border: 1.5px solid darkblue;
+    border-radius: 4px;
+    outline: none;
+}
+.inputField:focus{
+    background-color: aliceblue;
+    border: 3px solid darkblue;
+
+}
+::placeholder{
+    color: darkblue;
+    opacity: 0.4;
+}
+.addButton:disabled{
+    padding: 15px 20px;
+    font-size: 14pt;
+    border-radius: 4px;
+    border: 1.5px solid darkblue;
+    background-color: aliceblue;
+    color: darkblue;
+    opacity: 0.4;
+    cursor:not-allowed ;
+}
+.addButton{
+    padding: 15px 20px;
+    font-size: 14pt;
+    border-radius: 4px;
+    border: 3px solid darkgreen;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 50%;
+}
+.listTitle{
+    color:darkblue;
+    font-size: 16pt;
+
+}
+.listItem{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom:5px ;
+    padding: 15px 20px;
+    font-size: 14pt;
+    /* height: 50pt; */
+}
+.deleteButton{
+    height: 25pt;
+    width: 100pt;
+    padding: 5px 10px;
+    font-size: 14pt;
+    border-radius: 4px;
+    border: 1.5px solid darkred;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
