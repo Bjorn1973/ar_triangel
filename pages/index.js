@@ -105,27 +105,29 @@ const Index = () => {
         <h4 className="listTitle">
           Bezoekers die momenteel aanwezig zijn op school:
         </h4>
-        {todoList.length >= 1
-          ? todoList.map((todo, idx) => {
-              return (
-                <div>
-                  <li className="listItem" key={idx}>
-                    <span>&#8226;</span>
-                    {todo[0]} {todo[1]} - {todo[2]} - {todo[3]}
-                    <button
-                      className="deleteButton"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleDelete(todo);
-                      }}
-                    >
-                      Verwijder
-                    </button>
-                  </li>
-                </div>
-              );
-            })
-          : "Geen bezoekers aanwezig!"}
+        {todoList.length >= 1 ? (
+          todoList.map((todo, idx) => {
+            return (
+              <div>
+                <li className="listItem" key={idx}>
+                  <span>&#8226;</span>
+                  {todo[0]} {todo[1]} - {todo[2]} - {todo[3]}
+                  <button
+                    className="deleteButton"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleDelete(todo);
+                    }}
+                  >
+                    Verwijder
+                  </button>
+                </li>
+              </div>
+            );
+          })
+        ) : (
+          <div className="substitute">Geen bezoekers aanwezig!</div>
+        )}
       </ul>
     </div>
   );
