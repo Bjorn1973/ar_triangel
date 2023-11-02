@@ -62,7 +62,7 @@ const Index = () => {
       <div className="header">
         <h3 className="title">Aanwezigheidsregister Triangel</h3>
         <div>
-          <img src="/logo.png" alt="" />
+          <img src="/images/logo.png" alt="" />
         </div>
       </div>
       <form className="form" action="">
@@ -119,7 +119,10 @@ const Index = () => {
                       handleDelete(todo);
                     }}
                   >
-                    Verwijder
+                    <svg className="icon-trash">
+                      <use xlinkHref="/icons/symbol-defs.svg#icon-trash"></use>
+                    </svg>
+                    {/* Verwijder */}
                   </button>
                 </li>
               </div>

@@ -75,8 +75,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     margin: 0 auto;
-    width: 50%;
+    width: 100%;
 }
 .listTitle{
     color:darkblue;
@@ -86,23 +87,58 @@ body {
 .listItem{
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin-bottom:5px ;
     padding: 15px 20px;
     font-size: 14pt;
-    /* height: 50pt; */
 }
 .deleteButton{
-    height: 25pt;
-    width: 100pt;
-    padding: 5px 10px;
+    height: 50px;
+    width: 50px;
+    padding: 10px 10px;
     font-size: 14pt;
-    border-radius: 4px;
+    border-radius: 10px;
     border: 1.5px solid darkred;
     background-color: red;
     color: white;
     font-weight: bold;
+    margin-left: 15px
+}
+.icon-trash{
+    width: 30px;
+    height: 30px;
+    fill:white;
 }
 .substitute{
     color:darkblue;
     font-size: 14pt;
+}
+
+@media screen and (max-width: 915px){
+    .title{
+        font-size: 28pt;
+    }
+    .form{
+        width: 50%;
+    }
+    .list{
+        padding:0;
+    }
+    .listTitle{
+        font-size: 14pt;
+    }
+    .listItem{
+        padding: 15px 0px;
+        font-size: 13pt;
+    }
+}
+@media screen and (max-width: 915px){
+    .listTitle{
+        font-size: 12pt;
+    }
+}
+@media screen and (max-width: 780px){
+    .form{
+        width: 65%;
+    }
 }
