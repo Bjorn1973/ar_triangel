@@ -1,4 +1,7 @@
-import { useState } from "react";
+"use client";
+
+import { useState, useEffect } from "react";
+import { nanoid } from "nanoid";
 
 const Index = () => {
   const [userInput, setUserInput] = useState({
@@ -8,6 +11,7 @@ const Index = () => {
   });
   const [todoList, setTodoList] = useState([]);
   const [isDisabled, setIsDisabled] = useState("disabled");
+  const [isMounted, setIsMounted] = useState(false);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -26,7 +30,7 @@ const Index = () => {
       setIsDisabled(true);
     }
 
-    console.log(userInput);
+    //console.log(userInput);
   };
 
   const handleSubmit = (e) => {
@@ -47,15 +51,42 @@ const Index = () => {
       reason: "",
     });
     setIsDisabled("disabled");
+    localStorage.setItem(
+      userInput.firstName + userInput.lastName,
+
+      userInput.firstName +
+        " " +
+        userInput.lastName +
+        " " +
+        userInput.reason +
+        " " +
+        new Date().toLocaleTimeString()
+    );
   };
 
   const handleDelete = (todo) => {
     const updatedArr = todoList.filter(
       (todoItem) => todoList.indexOf(todoItem) != todoList.indexOf(todo)
     );
-
+    //console.log(todo);
     setTodoList(updatedArr);
+    localStorage.removeItem(todo[0] + todo[1]);
   };
+
+  useEffect(() => {
+    setIsMounted(true);
+    const savedUserInput = { ...localStorage };
+
+    console.log(savedUserInput);
+    if (savedUserInput) {
+      const todos = Object.values(savedUserInput);
+      console.log(todos);
+      const lists = todos.map((todo) => todo.split(" "));
+      const list = lists.map((list) => list.join().split(","));
+      setTodoList(list);
+      console.log(list);
+    }
+  }, []);
 
   return (
     <div>
@@ -102,15 +133,16 @@ const Index = () => {
         </button>
       </form>
       <ul className="list">
-        <h4 className="listTitle">
+        <h4 className="listTitle" key="title">
           Bezoekers die momenteel aanwezig zijn op school:
         </h4>
+
         {todoList.length >= 1 ? (
           todoList.map((todo, idx) => {
             return (
-              <div>
-                <li className="listItem" key={idx}>
-                  <span>&#8226;</span>
+              <div key={nanoid()}>
+                <li className="listItem">
+                  <span>&#8226; </span>
                   {todo[0]} {todo[1]} - {todo[2]} - {todo[3]}
                   <button
                     className="deleteButton"
