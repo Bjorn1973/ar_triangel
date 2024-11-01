@@ -41,7 +41,7 @@ const Index = () => {
         userInput.firstName,
         userInput.lastName,
         userInput.reason,
-        new Date().toLocaleDateString(),
+        new Date().toLocaleDateString("nl-BE", { dateStyle: "short" }),
         new Date().toLocaleTimeString(),
       ],
       ...todoList,
@@ -61,7 +61,7 @@ const Index = () => {
         " " +
         userInput.reason +
         " " +
-        new Date().toLocaleDateString() +
+        new Date().toLocaleDateString("nl-BE", { dateStyle: "short" }) +
         " " +
         new Date().toLocaleTimeString()
     );
