@@ -15,6 +15,10 @@ Single-colored icons can be modified like so:
 }
 ========================================== */
 
+.icon-close {
+  width: 0.7857142857142857em;
+}
+
 .icon-trash {
   width: 0.7857142857142857em;
 }

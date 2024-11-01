@@ -138,7 +138,7 @@ const Index = () => {
         </h4>
 
         {todoList.length >= 1 ? (
-          todoList.map((todo, idx) => {
+          todoList.map((todo) => {
             return (
               <div key={nanoid()}>
                 <li className="listItem">
@@ -151,8 +151,8 @@ const Index = () => {
                       handleDelete(todo);
                     }}
                   >
-                    <svg className="icon-trash">
-                      <use xlinkHref="/icons/symbol-defs.svg#icon-trash"></use>
+                    <svg className="icon-close">
+                      <use xlinkHref="/icons/symbol-defs.svg#icon-close"></use>
                     </svg>
                     {/* Verwijder */}
                   </button>
