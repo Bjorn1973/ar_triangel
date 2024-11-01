@@ -41,6 +41,7 @@ const Index = () => {
         userInput.firstName,
         userInput.lastName,
         userInput.reason,
+        new Date().toLocaleDateString(),
         new Date().toLocaleTimeString(),
       ],
       ...todoList,
@@ -59,6 +60,8 @@ const Index = () => {
         userInput.lastName +
         " " +
         userInput.reason +
+        " " +
+        new Date().toLocaleDateString() +
         " " +
         new Date().toLocaleTimeString()
     );
@@ -143,7 +146,7 @@ const Index = () => {
               <div key={nanoid()}>
                 <li className="listItem">
                   <span>&#8226; </span>
-                  {todo[0]} {todo[1]} - {todo[2]} - {todo[3]}
+                  {todo[0]} {todo[1]} - {todo[2]} - {todo[3]} - {todo[4]}
                   <button
                     className="deleteButton"
                     onClick={(e) => {
